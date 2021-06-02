@@ -72,7 +72,7 @@ def collate_fn(data):
 test_df = pd.read_csv('test.csv')
 test_df['label'] = 0
 test_set = MyDataset(test_df)
-y_all = np.ones((5000,2))
+y_all = np.zeros((5000,2))
 test_loader = DataLoader(test_set, batch_size=CFG['valid_bs'], collate_fn=collate_fn, shuffle=False, num_workers=CFG['num_workers'])
 
 
@@ -80,7 +80,7 @@ test_loader = DataLoader(test_set, batch_size=CFG['valid_bs'], collate_fn=collat
 model = BertForSequenceClassification.from_pretrained(CFG['model'],num_labels=2).cuda()  # 模型
 y_pred,predictions=[],[]
 
-for m in ['0_robert_pgd_0.8619298789947254.pt']:
+for m in ['']:
     model.load_state_dict(torch.load(m))
     y_pred = []
     with torch.no_grad():
