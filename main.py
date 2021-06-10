@@ -20,12 +20,12 @@ CFG = { #训练的参数配置
     'model': 'luhua/chinese_pretrain_mrc_roberta_wwm_ext_large', #预训练模型
     'max_len': 300, #文本截断的最大长度
     'epochs': 8,
-    'train_bs': 7, #batch_size，可根据自己的显存调整
-    'valid_bs': 7,
-    'lr': 1e-5, #学习率
+    'train_bs': 9, #batch_size，可根据自己的显存调整
+    'valid_bs': 9,
+    'lr': 8e-6, #学习率
     'num_workers': 0,
     'accum_iter': 2, #梯度累积，相当于将batch_size*2
-    'weight_decay': 1e-4, #权重衰减，防止过拟合
+    'weight_decay': 2e-4, #权重衰减，防止过拟合
     'device': 0,
 }
 
