@@ -15,7 +15,7 @@ from transformers import *
 from torch.autograd import Variable
 
 CFG = { #训练的参数配置
-    'fold_num': 5, #五折交叉验证
+    'fold_num': 10, #十折交叉验证
     'seed': 2,
     'model': 'hfl/chinese-roberta-wwm-ext-large', #预训练模型
     'max_len': 300, #文本截断的最大长度
